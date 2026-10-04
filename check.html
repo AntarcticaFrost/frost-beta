@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frost STU</title>
+    <link rel="stylesheet" href="check.css">
+
+    <!-- JavaScript libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
+
+    <script type="text/javascript" src="check.js" defer></script>
+</head>
+<body>
+        <!-- Navigation Bar -->
+        <nav>
+            <ul class="nav-links">
+                <li><a class="inactive" href="index.html">Home</a></li>
+                <li><a class="active" href="check.html">Check</a></li>
+                <li><a class="inactive" href="admin.html">Admin</a></li>
+                <li><a class="inactive" href="about.html">About</a></li>
+            </ul>
+        </nav>
+        <!-- Main Content -->
+        <main>
+            <!-- Header -->
+            <section class="heading">
+                <ul class="floor-links">
+                    <li><a href="check.html?floor=2">Floor 2</a></li>
+                    <li><a href="check.html?floor=3">Floor 3</a></li>
+                    <li><a href="check.html?floor=4">Floor 4</a></li>
+                    <li><a href="check.html?floor=5">Floor 5</a></li>
+                    <li><a href="check.html?floor=6">Floor 6</a></li>
+                    <li><a href="check.html?floor=7">Floor 7</a></li>
+                </ul>
+                <select>
+                        <option>Name</option>
+                        <option>2 / A</option>
+                        <option>2 / B</option>
+                        <option>3 / A</option>
+                        <option>3 / B</option>
+                        <option>4 / A</option>
+                        <option>4 / David</option>
+                        <option>5 / A</option>
+                        <option>5 / B</option>
+                        <option>6 / A</option>
+                        <option>6 / B</option>
+                        <option>7 / A</option>
+                        <option>7 / B</option>
+                </select>
+                <span id="local-time"></span>
+            </section>
+            <!-- Table -->
+                <table id="check-table" class="check-table">
+                    <thead>
+                        <tr>
+                            <th>Room</th>
+                            <th>Door</th>
+                            <th>Person</th>
+                            <th>In / Out</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="check-body">
+                    </tbody>
+                </table>
+                <!-- Generate Json/PDF -->
+            <div class="actions">
+                <button class="btn" id="json-btn">JSON</button>
+                <button class="btn" id="pdf-btn">PDF</button>
+            </div>
+        </main>
+        <!-- Footer -->
+        <footer>
+            <div class="copyright">
+                <p>© 2026 Frost. Version: 0.1 "Beta"</p>
+            </div>
+        </footer>
+</html>

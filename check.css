@@ -1,0 +1,295 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box  ;
+}
+html {
+    scrollbar-width: none;
+}
+html::-webkit-scrollbar {
+    display: none;
+}
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: #0b0227;
+    background-image: radial-gradient(
+        circle,
+         rgba(255, 255, 255, 0.16) 1px,
+        transparent 1px
+    );
+    background-size: 40px 40px;
+}
+
+/* Navigation Bar */
+nav{
+    position: sticky;
+    top: 0;
+    z-index: 999;
+
+    background: linear-gradient(to right, 
+    rgba(0, 0, 0, 0.500), 
+    rgba(15, 0, 51, 0.700),
+    rgb(56, 13, 88));
+
+    width: 100%;
+    padding: 1em 10%;
+    border-bottom: 1px solid white;
+
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+.active {
+    position: relative;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    transition: 0.3s;
+    text-shadow: 0 0 20px #6e9cff;
+}
+.active:hover {
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 20px #ffffff;
+}
+.nav-links li .inactive {
+    position: relative;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    color: rgb(199, 199, 199);
+    transition: 0.3s;
+}
+.nav-links li .inactive:hover {
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 20px #ffffff;
+}
+
+/* Main Content */
+main {
+    min-height: calc(100vh - 80px);
+    padding: 1em;
+}
+/* Floors */
+.floor-links {
+    list-style: none;
+    gap: .5rem;
+    margin-bottom: 1.5em;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.floor-links li a {
+    display: flex;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    transition: 0.3s;
+
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px 10px;
+
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+
+    background: white;
+    font-size: 16px;
+}
+/* Header */
+.heading {
+    width: 100%;
+    max-width: 900px;
+    margin: 10px auto;
+    border-collapse: collapse;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.heading select {
+    width: 33%;
+    box-sizing: border-box;
+    padding: 8px 10px;
+
+    border: 1px solid #ccc;
+    border-radius: 6px;
+
+    background: white;
+    font-size: 14px;
+}
+.heading select:focus {
+    outline: none;
+    border-color: #555;
+}
+.heading span {
+    width: 33%;
+    box-sizing: border-box;
+    padding: 8px 10px;
+
+    border: 1px solid #ccc;
+    border-radius: 6px;
+
+    background: white;
+    font-size: 14px;
+
+    float: right;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+/*Table*/
+.check-table {
+    width: 100%;
+    max-width: 900px;
+    margin: 30px auto;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+}
+.numbers{
+    color: #ffffff;
+}
+.rooms {
+    border-radius: 2px;
+    color: #ffffff;
+    font: bold;
+}
+.check-table th,
+.check-table td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+.check-table th {
+    background: #f3f3f3;
+    font-weight: 600;
+}
+.check-table input,
+.check-table select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px 10px;
+
+    border: 1px solid #ccc;
+    border-radius: 6px;
+
+    background: white;
+    font-size: 14px;
+}
+.check-table input:focus,
+.check-table select:focus {
+    outline: none;
+    border-color: #555;
+}
+/* Download Buttons */
+.actions{
+    width: 100%;
+    max-width: 900px;
+    margin: 10px auto;
+    border-collapse: collapse;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.btn{
+    width: 20%;
+    box-sizing: border-box;
+    padding: 8px 10px;
+
+    border: 1px solid #ccc;
+    border-radius: 6px;
+
+    background: white;
+    font-size: 14px;
+    float: right;
+    margin-left: 1em;
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+.btn:hover {
+    box-shadow: 0 0 20px #ffffff;
+}
+
+/* Footer */
+footer {
+    display: flex;
+    padding: 1em;
+    border-top: 1px solid white;
+    margin-top: 1em;
+    align-items: center;
+    justify-content: flex-end;
+    color:  #ffffff;
+}
+
+/* Mobile */
+@media (max-width: 800px) {
+    main {
+        padding: 0 10px;
+    }
+    /* Turn each table row into a vertical card */
+    .check-table,
+    .check-table tbody,
+    .check-table tr {
+        display: block;
+        width: 100%;
+    }
+    /* Hide the desktop header */
+    .check-table thead {
+        display: none;
+    }
+    /* Each room */
+    .check-table .room-row {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    /* Every field takes the whole row */
+    .check-table .room-row td {
+        display: block;
+        width: 100%;
+        padding: 10px 0;
+        box-sizing: border-box;
+    }
+    /* Room number */
+    .check-table .rooms {
+        padding: 5px 0 8px 0;
+        font-size: 24px;
+        font-weight: bold;
+        color: white;
+        border-bottom: none;
+    }
+    /* Inputs and selects */
+    .check-table input,
+    .check-table select {
+        display: block;
+        width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+
+        padding: 12px 18px;
+
+        border: 1px solid #ccc;
+        border-radius: 10px;
+
+        background: white;
+        font-size: 18px;
+    }
+    /* Line underneath each room */
+    .check-table .room-row td:last-child {
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 20px;
+    }
+}
+
+/* Page Transitions */
+@view-transition {
+    navigation: auto;
+}

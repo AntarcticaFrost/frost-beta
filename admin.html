@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frost Admin</title>
+    <link rel="stylesheet" href="admin.css">
+
+    <!-- JavaScript libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
+    
+    <script type="text/javascript" src="admin.js" defer></script>
+</head>
+<body>
+        <!-- Navigation Bar -->
+        <nav>
+            <ul class="nav-links">
+                <li><a class="inactive" href="index.html">Home</a></li>
+                <li><a class="inactive" href="check.html">Check</a></li>
+                <li><a class="active" href="admin.html">Admin</a></li>
+                <li><a class="inactive" href="about.html">About</a></li>
+            </ul>
+        </nav>
+
+    <div id="login-screen">
+        <input type="password" id="password" placeholder="Enter password">
+        <button onclick="checkPassword()">Enter</button>
+        <p id="error"></p>
+            </div>
+
+            <div id="page-content" style="display: none;">
+
+    
+        <!-- Main Content -->
+        <main>
+            <h1>Admin Dashboard</h1>
+
+            <input
+                type="file"
+                id="json-files"
+                accept=".json"
+                multiple
+            >
+
+            <label for="json-files" class="file-button">
+                Choose JSON Files
+            </label>
+
+            <button class="pdfbtn" id="create-pdf-btn">
+                Create PDF
+            </button>
+
+            <div id="status"></div>
+        </main>
+
+    </div>
+
+        <!-- Footer -->
+        <footer>
+            <div class="copyright">
+                <p>© 2026 Frost. Version: 0.1 "Beta"</p>
+            </div>
+        </footer>
+</html>
