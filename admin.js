@@ -125,8 +125,9 @@ function createPDF(jsonFiles) {
             return [
                 row.room,
                 row.door,
+                row.person,
                 row.inOut,
-                row.person
+                row.status
             ];
 
         });
@@ -138,7 +139,7 @@ function createPDF(jsonFiles) {
             startY: 32,
 
             head: [
-                ["#", "Room", "Door", "In / Out", "Person"]
+                ["Room", "Door", "Person", "In / Out", "Status"]
             ],
 
             body: tableData
